@@ -1,0 +1,92 @@
+Christopher Hogwood web site
+============================
+
+
+This is the set of files created for the new web site for 
+Christopher Hogwood, which was cancelled when he died of a 
+brain tumour.
+
+It's here because it uses an AJAX-based approach to enable 
+people in Hogwood's office to log in and alter things. This 
+was originally developed for use on sites where there is a 
+need for occasional small alterations, which don't justify 
+running a large CMS.
+
+In outline:
+
+You log in by visiting the login directory (in this case 
+data/tmp/login) which is password-protected by apache. If 
+the login is successful, a cookie is set saying that the 
+user has logged in. 
+
+Logging in and enabling editing
+-------------------------------
+Each page of the site interrogates that cookie: if it shows 
+that the person is logged in, then it loads some additional 
+javascript from the login directory and then goes through 
+the page looking for elements of class ".editable" and adds 
+editing facilities to each of them. Recording that someone 
+has logged in by means of a cookie is not particularly 
+secure, but loading the javascript from the login directory 
+means that, even if the cookie is spoofed, the files can't 
+be accessed without logging in.
+
+Editing
+-------
+This works by setting the ContentEditable variable to true when 
+something is being edited, with a variety of additional features
+for special pages -- controlled via templates or the cleanup.htm 
+file included at the foot of each page.
+
+Use
+---
+For all editable elements, one highlights something to 
+change and then selects something from the buttons that 
+appear below.
+
+New elements
+------------
+The menu that appears under an element when it becomes 
+editable includes an option to create a new element. If 
+there is a class beginning "template" then a template from 
+data/tmp/login/templates.js is used. 
+
+Saving and server-side includes
+-------------------------------
+There are two files of HTML for each page on the side. The 
+outer file includes scripts etc, and the main content is 
+included via a server-side include, inside a div called 
+maincontent. The inner pages have file names beginning c-, 
+so news.htm includes c-news.htm. The point here is that the 
+edited material lives in the maincontent div, so saving that 
+back to (say) c-news.htm avoids the need to unload scripts 
+loaded by the header of news.htm before saving.
+
+Previews
+--------
+This particular version needed the capacity to preview 
+things -- so Hogwood could check something done in his 
+office before it went live. The upshtot is that there is a 
+copy of the site in the data/tmp directory, and things are 
+edited in this directory, saving giving the option to save 
+to there or to there and to the live data directory.  Files 
+common to both, such as css files, are provided by symbolic 
+links (though I assume these get expanded in uploading to 
+github).
+
+Issues
+------
+This version used sendAsBinary to send images, and has a 
+rather clunky ajax call to save the pages. These are altered 
+in sites based on this, but it seems more logical to upload 
+the master site here.
+
+Future enhancements -- Node and Angular
+---------------------------------------
+The next site to be based on this codebase will be bilingual 
+Welsh/English. The plan is to shift to use Node and Angular2 
+for this as a way of starting to get a feel for what these 
+can do.
+
+
+

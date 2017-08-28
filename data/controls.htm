@@ -1,0 +1,147 @@
+<style>
+.hovermenu{
+  width:0px;
+  padding:0px 40px 0px 0px;
+  height:10px;
+  margin:4px 2px 2px 2px;
+  border:1px solid;
+  border-color;#888888;
+  display: inline;
+}
+.hovermenuborder{
+  border:2px solid;
+}
+
+</style>
+
+
+<div id=controls>
+<a href="javascript:ipad();">show ipad size</a><br>
+
+
+font:
+<a href="javascript:choose_font('Palatino')">Palatino</a> -
+<a href="javascript:choose_font('Optima')">  Optima</a>   -
+<a href="javascript:choose_font('Gill')">    Gill Sans</a> -
+<a href="javascript:choose_font('Georgia')">    Georgia</a> -
+<a href="javascript:choose_font('Garamond')">Garamond</a> <br>
+
+
+<div id=colwtest>
+single column width:
+<a href="javascript:try_width('80ex');">80ex</a> -
+<a href="javascript:try_width('90ex');">90ex</a> -
+<a href="javascript:try_width('100ex');">100ex</a> -
+<a href="javascript:try_width('110ex');">110ex</a><br>
+</div>
+
+Menu hover colour:
+
+<div class=hovermenu id=hovermenu0 style="background-color:#c87b3c;">&nbsp</div>
+<div class=hovermenu id=hovermenu1 style="background-color:#944709;">&nbsp</div>
+<div class=hovermenu id=hovermenu2 style="background-color:#ffcfce;">&nbsp</div>
+<div class=hovermenu id=hovermenu3 style="background-color:#406604;">&nbsp</div>
+<div class=hovermenu id=hovermenu4 style="background-color:#760314;">&nbsp</div>
+<div class=hovermenu id=hovermenu5 style="background-color:#1a0b5d;">&nbsp</div>
+
+
+</div> <!-- controls -->
+
+
+<script>
+
+$(".hovermenu").on("click",function(){
+  $.cookie("hoverstr",$(this).attr("id"));
+  location.reload();
+});
+
+
+if($.cookie("hoverstr")){
+  $(".hovermenuborder").each(function(){
+    $(this).removeClass("hovermenuborder");
+  });
+
+  var hover_id= "#" + $.cookie("hoverstr");
+
+  $(hover_id).addClass("hovermenuborder");
+
+  var savedbgcolor=$(hover_id).css("background-color");
+
+  var preserve_color="#ffffff";
+
+  $(".m0,.m1,.m2,.m3").hover(
+    function(){
+      $(this).css("background-color",savedbgcolor);
+      if(hover_id.indexOf("hovermenu2")>-1){
+        $(this).css("color","#47403e");
+      }
+    },
+    function(){
+      $(this).css("background-color","transparent");
+      $(this).css("color",preserve_color);
+    }
+  );
+  }
+  else{
+  $("#hovermenu0").addClass("hovermenuborder");
+}
+
+var w_forced=0;
+if(location.toString().indexOf("news.htm")>-1){w_forced=1;}
+if(location.toString().indexOf("biography")>-1){w_forced=1;}
+if(location.toString().indexOf("archive")>-1){w_forced=1;}
+if(w_forced<1)$("#colwtest").remove();
+
+
+function try_width(){
+  $("#maincontent").css("max-width",arguments[0]);
+}
+
+
+function ipad(){
+  var ipad_h=663;
+  var ipad_w=980;
+  var spec="height=" + ipad_h;
+  spec+=",width=" + ipad_w;
+  spec+=",menubar=yes,resizable=yes,scrollbars=yes,status=yes,toolbar=yes";
+
+  window.open(window.location,"",spec);
+}
+
+function choose_font(fnt){
+  $.cookie("fontstr",fnt);
+  if(fnt.indexOf('Palatino')>-1){
+    $("body").css("font-family","'Palatino','Palatino Linotype','book antiqua','serif'");
+    $("body").css("font-size","14px");
+    $("#controls").css("font-size","12px");
+  }
+  if(fnt.indexOf('Optima')>-1){
+    $("body").css("font-family","'Optima'");
+    $("body").css("font-size","14px");
+    $("#controls").css("font-size","12px");
+  }
+  if(fnt.indexOf('Garamond')>-1){
+    $("body").css("font-family","'Garamond'");
+    $("body").css("font-size","15px");
+    $("#controls").css("font-size","13px");
+  }
+  if(fnt.indexOf('Georgia')>-1){
+    $("body").css("font-family","'Georgia'");
+    $("body").css("font-size","15px");
+    $("#controls").css("font-size","13px");
+  }
+  if(fnt.indexOf('Gill')>-1){
+    $("body").css("font-family","'Gill Sans','Gill Sans MT'");
+    $("body").css("font-size","14px");
+    $("#controls").css("font-size","12px");
+  }
+}
+
+
+if($.cookie("fontstr"))choose_font($.cookie("fontstr"));
+
+</script>
+
+
+
+

@@ -1,0 +1,956 @@
+
+<table cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td>
+<div style="height: 556px;" id="leftmenu" class="setupForPerfectScrollbar ps-container">
+
+  <div class="neditable feedbackintro">
+
+    <p>
+    Christopher Hogwood welcomes feedback on any aspect of his work.
+    </p>
+
+    <p>
+
+    Christopher Hogwood should be contacted by email to:
+    <span class="blat">hogwood</span>
+    and business correspondence should be directed to <span class="blat">office</span>
+    </p>
+
+    <p>
+    Please fill in the form below to leave a message on this page.
+    </p>
+
+  </div>
+
+  <div id="feedbackwrapper">
+    <form id="feedbackform">
+
+    <div class="boxlabel">Name</div>
+    <input name="name" type="text"><br>
+
+    <div class="boxlabel">E-Mail</div>
+    <input name="email" type="text"><br>
+
+    <div class="boxlabel">Comments</div>
+    <textarea cols="25" rows="15" name="comment"></textarea><br>
+
+    <input value="Send Comments" type="submit">
+    </form>
+  </div>
+
+<script>
+$("#feedbackform").submit(function(event){
+  var name=$("#feedbackform input[name=name]").val();
+  var email=$("#feedbackform input[name=email]").val();
+  var comment=$("#feedbackform textarea[name=comment]").val();
+
+  $.ajax({
+    url: "/cgi-bin/feedback.cgi",
+    cache: false,
+    data: "name=" + name +  "&email=" + email + "&comment=" + comment
+  })
+  .error(function(xqXHR,textStatus,errorThrown){
+    alert("Error, status: " + textStatus + " error: " + errorThrown +"\n");
+  })
+ // .success(function(returned){alert("Success, returned: " + returned);});
+
+  event.preventDefault();
+  $("#feedbackwrapper").html("Thank you for your comments");
+  $("#feedbackwrapper").addClass("feedbackresponse");
+});
+</script>
+
+</div>
+
+</td>
+<td>
+
+<div style="height: 556px;" id="rightcontent" class="setupForPerfectScrollbar ps-container">
+
+
+
+
+
+
+
+<div id="ID0" class="feedbackentry OKToPublish editable" contenteditable="false">
+  <div class="name">Name : Ravi Putcha</div>
+  
+
+  <div class="comment">
+  Dear Mr.Hogwood,<br>
+  <br>
+  I love your outstanding work on Mozart's Clarinet and Oboe concertos
+  played by Antony Pay and Michael Piguet. Its a landmark work. The
+  concertos are so mesmerizing, soul lifting and memorable that I have
+  been hearing them repeatedly for last 20 years yet can't get enough of
+  them. <br>
+  <br>
+  You brought the music of Mozart to life. <br>
+  <br>
+  Regards.
+  </div>
+</div>
+
+<div id="ID1" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Henk Kropman</div>
+  
+
+  <div class="comment">
+  Dear Sir, <br>
+  Most I like your recording of Ludwig van Beethoven's Eroica from 1986.
+  It is a very balanced performance. Much thanks.<br>
+  <br>
+  Greatings,<br>
+  Henk Kropman
+  </div>
+</div>
+
+<div id="ID2" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Sebastian Pawlak</div>
+  
+
+  <div class="comment">
+  Dear Sir,<br>
+  <br>
+  In Warsaw, You showed me the best performance of W.A. Mozart -
+  Symphony No.39 (KV 543) I have ever heard. Thank you.
+  </div>
+</div>
+
+<div id="ID3" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Jaroslaw Malanowicz</div>
+  
+
+  <div class="comment">
+  Dear Sir, I would like to thank you cordially for wonderfull concerts in
+  Warsaw Philharmonic. Playing b.c. i Haydn Nelson mass under your
+  conductining was a reamarkable honour for me. With best wishes for
+  future and with hope to play again Jaroslaw Malanowicz
+  </div>
+</div>
+
+<div id="ID4" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : barbara lucke</div>
+  
+
+  <div class="comment">
+  dear mr. hogwood,<br>
+  <br>
+  thanks for the st.-caecilia-music, such a fine piece of music. i got a
+  spirituell feeling, how deep and wonderful is the world, from the clear
+  fount coming true beauty, pure joy. thanks from bremen
+  </div>
+</div>
+
+<div id="ID5" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Sonja Williams</div>
+  
+
+  <div class="comment">
+  Dear Mr. Hogwood, <br>
+  I was very lucky to see you conducting at the Beethovenhalle in Bonn
+  today. I wish to tell you that I had a great time to see you conducting
+  the Bonn Orchestra. - Thank you so much for this pleasure. <br>
+  <br>
+  Best Regards - Sonja Williams.
+  </div>
+</div>
+
+<div id="ID6" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Manuel Ortiz</div>
+  
+
+  <div class="comment">
+  Querido maestro Hogwood,<br>
+  Felicidades por su aniversario y gracias por lo que nos ha ense
+  </div>
+</div>
+
+<div id="ID7" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : David Zivan</div>
+  
+
+  <div class="comment">
+  Happy Birthday, young man! <br>
+  <br>
+  I hope this note finds you finishing off a glass of excellent grappa.<br>
+  <br>
+  Many thanks for decades of inspiration and pleasure.<br>
+  <br>
+  David Zivan<br>
+  Indianapolis
+  </div>
+</div>
+
+<div id="ID8" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Michael Smith</div>
+  
+
+  <div class="comment">
+  Happy 70th birthday to the ever-youthful Christopher Hogwood. Thank you for many years of musical elucidation and inspiration.
+  </div>
+</div>
+
+<div id="ID9" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Mark Powell</div>
+  
+
+  <div class="comment">
+
+  Dear Mr Hogwood,<br>
+  <br>
+  When I purchased my first CD player, way back in 1984, I purchased with
+  it just two CDs to start me off. They were two Handel works, by yourself
+   conducting the AAM, though at the time I was new to 'classical' music
+  and had not heard of the of the orchestra. Since then you and the
+  Academy have given me the greatest musical pleasure that I have ever
+  had.<br>
+  <br>
+  Thank you,<br>
+  <br>
+  Mark Powell, Southampton
+  </div>
+</div>
+
+<div id="ID10" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Mei Hurrell</div>
+  
+
+  <div class="comment">
+  My husband and I would like to thank you for coming to Hong Kong and
+  giving a great concert. We come from New Zealand &amp; I have admired
+  &amp; listened to your work esp. with the Academy of Ancient Music for
+  over 20 years, so this is an opportunity to express our appreciation for
+   the joy you bring to us and millions of people.
+  </div>
+</div>
+
+<div id="ID11" class="feedbackentry  OKToPublish editable">
+  <div class="name">Name : Jacques Hostetter</div>
+  
+
+  <div class="comment">
+  Dear Mr. Hogwood,<br>
+   <br>
+  Sorry for my poor English (I am French and absolutely not a musician, only a music-lover and an enthusiastic of Beethoven).<br>
+  It is already a long time that I wished to give you this feedback about
+  Beethoven Complete Symphonies with The Academy of Ancient Music (AAM)
+  which, at time of their first release (about 1985), did not receive the
+  merited acknowledgement (at the least in France!).<br>
+   <br>
+  For me, your Interpretation with the AAM is absolutely unequaled.  I
+  often compared with other noteworthy records and I came always to the
+  same conclusion: your tempi, your accentuations, the highest level of
+  the musicians, the unity of the orchestra,  the nuances, the shade and
+  globally your vision of these outstanding works from classical
+  repertoire, situate these recordings at the top of the top. <br>
+  I have the complete collection in the original release from L'Oiseau
+  Lyre which offers additionally the famous and natural DECCA-sound. <br>
+  In other words, my selection for the lonely Island.<br>
+  It is always with great excitement that I place these fantastic CDs on my Naim player.<br>
+   <br>
+  Naturally I possess other CDs from AAM which bring me always huge exaltation.<br>
+   <br>
+  Thank you very much for your fantastic work, all the pleasure and immeasurable emotion you bring to all classical music lovers.<br>
+   <br>
+  Sincerely yours,<br>
+   <br>
+  Jacques
+  </div>
+</div>
+
+<div id="ID12" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Michael Smith</div>
+  
+
+  <div class="comment">
+  One of Christopher Hogwood's most useful editing projects has been his
+  series of the chamber versions of Haydn's twelve London symphonies,
+  'ingeniously contracted' by Salomon for string quartet, flute and piano.
+   Haydn enthusiasts near London have the chance to hear a performance of
+  this version of Symphony 101 ('The Clock') at King's Place on 25th June
+  given by RAM students, directed by Trevor Pinnock.<br>
+  <br>
+  In a piece of enterprising programming, the other work on offer is Erwin Stein's fifteen-player arrangement of Mahler 4.
+  </div>
+</div>
+
+<div id="ID13" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Paul Gabler</div>
+  
+
+  <div class="comment">
+  I totally agree with mister Mathieu when he stated "Especially your
+  recordings of William Byrds "My Ladye Nevells Booke" are such a joy to
+  listen to over, over<br>
+  and over again". <br>
+  Many thanks for this milestone in music-performance
+  </div>
+</div>
+
+<div id="ID14" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Michael Smith</div>
+  
+
+  <div class="comment">
+  Readers who enjoyed Christopher Hogwood's engaging performance of the
+  first two movements of Prokofiev's Classical Symphony linked in the News
+   page may like to know that the rest is available here:<br>
+  <br>
+  http://v.youku.com/v_show/id_XMTM2ODk2OTA4.html
+  </div>
+</div>
+
+<div id="ID15" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Michael Ehrick</div>
+  
+
+  <div class="comment">
+  Dear Mr. Hogwood,<br>
+  <br>
+  I own and very much enjoy your three clavichord "Secret" albums (Handel,
+   Bach, and Mozart).  At one time, I believe there was mention of a
+  "Secret Beethoven," but I have been unable to find it--on this site, or
+  elsewhere.  Has it been released, or is it still planned?  For what it
+  may be worth, if the commercial market is insufficient, I would be glad
+  for the opportunity to purchase such a work as a downloadable .mp3.<br>
+  <br>
+  Best wishes,<br>
+  <br>
+  Michael Ehrick (USA)
+  </div>
+</div>
+
+<div id="ID16" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Patricia Yeiser</div>
+  
+
+  <div class="comment">
+  I just watched your London "Dido" and was much moved by the performance:
+   the singing and orchestra were stunning, and even the dance - of which I
+   generally am not a fan, unless it's authentic Renaissance and Baroque -
+   incorporated some Baroque gestures. I did like the idea of conjoined
+  witches and they accomodated one another very well.  Dido's final aria
+  was paced perfectly and as always, I am in awe of singers who can droop
+  down and die on stage, have it look natural and sing beautifully.
+  Jonathan Miller would be pleased: no operatic histrionics.  The entire
+  piece was well-conceived and kept me enthralled throughout.  Thank you
+  for your work.  Patricia Yeiser, Syracuse, New York, USA
+  </div>
+</div>
+
+<div id="ID17" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Margit-Gabriele Berger</div>
+  
+
+  <div class="comment">
+  Maestro, <br>
+  dear Mr. Hogwood,<br>
+  <br>
+  thank you very much for the<br>
+  wonderful concert today with the RSO in the Liederhalle Stuttgart. I
+  enjoyed this beautiful music very much and my farvorites are the old
+  music.<br>
+  <br>
+  With my best wishes and<br>
+  warm regards,<br>
+  Margit-Gabriele Berger.
+  </div>
+</div>
+
+<div id="ID18" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Bob Neill</div>
+  
+
+  <div class="comment">
+  I was just listening to Egarr's version of Handel's Opus 3 and as fine
+  as it is, I felt something essential was missing. Went back to yours
+  with the Handel &amp;  Haydn Society and found the missing element:
+  vive! One of the greatest performances of baroque music ever made. Still
+   available on Avie, I'm told. Your Messiah on L'Oiseau Lyre is also
+  still the best.<br>
+  <br>
+  Many, many thanks.
+  </div>
+</div>
+
+  <div class="comment">
+<div id="ID19" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Roger Adams</div>
+  
+
+  Dear Mr. Hogwood,<br>
+  <br>
+  I have just read the wikipedia on your career and am interested to know
+  how the project on the complete works of CPE Bach is coming on.  The
+  wiki states that it will be finished by 2014 but are there any
+  recordings that have been completed and available on CD/DVD?   If so,
+  are you able to let me have a list of these available works?<br>
+  <br>
+  Many thanks in advance for your kind response.<br>
+  <br>
+  Kind regards<br>
+  <br>
+  Roger Adams
+  </div>
+</div>
+
+<div id="ID20" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Michael Smith</div>
+  
+
+  <div class="comment">
+  Congratulations on the conclusion of the Handel opera cycle. The
+  performance I heard last night at the Barbican was dazzlingly sung, with
+   beautifully articulated playing from the Academy. Christopher Hogwood's
+   hint in his Birmingham Post interview (see News page) that we might see
+   some Handel from the 1740s is an enticing prospect indeed.
+  </div>
+</div>
+
+<div id="ID21" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Patricia Yeiser</div>
+  
+
+  <div class="comment">
+  Dear Mr Hogwood:<br><br>
+  <br>
+  As to your letter to The Times, I don't recall that particular
+  Ciceronian conceit:  perhaps  our magistra didn't wish to call our
+  attention to the frivolous nature of the Orations. We were, after all,
+  mere adolescents with wandering minds.  On the other hand, it was her
+  habit to go into the hall and summon latecomers to class using Classical
+   Latin.  It was an effective use of the Imperative.  <br><br>
+  <br>
+  Patricia Yeiser, Syracuse, NY, USA
+  </div>
+</div>
+
+<div id="ID22" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Stephan Mathieu</div>
+  
+
+  <div class="comment">
+  Dear Christopher Hogwood,<br><br><br>
+  here is just a quick note to say *Thank You* for your wonderful work.<br>
+  <br>
+  I'm a composer and performer of electroacoustic music with a deep love
+  for early music. My search for players who seem to really open a window
+  to those days has lead me to the Academy of Ancient Music and your
+  colleagues of the Consort of Musicke. What can I say, listening to your
+  recordings sometimes makes it even harder to find some quality time to
+  work on my things! But I certaily don't regret as your music is such a
+  wonderful source of inspiration. Especially your recordings of William
+  Byrds "My Ladye Nevells Booke" are such a joy to listen to over, over
+  and over again.
+  <br><br>
+  Although I'm not a skilled keyboard player in any way myself I started
+  a project called 'Virginals' two years ago. This is dedicated to
+  interpretation and early instruments, I'm performing special versions
+  of compositions by contemporary composers Alvin Lucier, Phill Niblock
+  and Francisco Lopez on an Ottavino built by Arnold Dolmetsch and a set
+  of four mechanical gramophones. A CD with this material will be
+  released by the end of the year on the London based 'Touch' label and
+  it would be my great pleasure to send you a copy once this is finished.
+  I didn't mean to bother you with any questions with this very
+  spontaneous message, but as the Virginals project is also dedicated to
+  you it would be very kind if you want to give me an address where i may
+  send a CD to.
+  <br><br>
+  In the end I meant to say thank you for the outstanding work!
+  <br><br>
+  With the very best wishes<br>
+  - Stephan
+  </div>
+</div>
+
+<div id="ID23" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Roc&#195;&#173;o S&#195;&#161;nchez</div>
+  
+
+  <div class="comment">
+  Dear Mr. Hogwood,<br>
+   <br>
+  I have bought this version with Bott, Kirkby, etc, and it's great,
+  wonderful! A very very good work, congratulations! I love that you have
+  also used a boy sopran, Daniel Lochmann.<br>
+  <br>
+  Your version of Mozart's Requiem is great too, with Westminster Cathedral Boys Choir.<br>
+  <br>
+  Your work is excelent and the baroque-fans are thankful to you! HIgh quality!<br>
+  <br>
+  Best wishes.<br>
+  Roc&#195;&#173;o S&#195;&#161;nchez.<br>
+  Seville.
+  </div>
+</div>
+
+<div id="ID24" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Patricia Yeiser</div>
+  
+
+  <div class="comment">
+  Mr Hogwood:  Today as I drove through the city on a sunny winter day, I
+  listened to your performance with Handel &amp; Haydn (my favorite
+  American orchestra) of the Handel/Mozart "Messiah."  ( I taped the live
+  perfomance off-air in February of 1990.)  The performance is absolutely
+  astounding, and I'm ever in your debt for giving such a splendidly
+  moving reading.   Tanti grazii.   Patricia Yeiser
+  </div>
+</div>
+
+<div id="ID25" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Eric Keller</div>
+  
+
+  <div class="comment">
+  Dear Maestro Hogwood,<br>
+  <br>
+  I just wanted to thank you for (quickly) responding to my e-mail two
+  months ago and suggesting early works that are good for the low voice.<br>
+  I wanted to you to know that because of hard work and a little bit of
+  tenacity, I am already performing a concert here in New York City,
+  singing Bach's Cantatas Nos. 208 and 212,  Purcell's Come ye Sons of Art
+   (Birthday Ode for Queen Mary) and H&#195;&#164;ndel's Ode for the Birthday of
+  Queen Ann.  As I told you in my last e-mail, for the last couple of
+  years I have been dying to do oratorios and early music instead of
+  singing just opera.  I'm now finally getting that chance.  I have also
+  begun working on Messiah and Elijah.<br>
+  Again, thank you for your help and I wish you a successful and busy 2009.<br>
+  <br>
+  Sincerely,<br>
+  <br>
+  Eric Keller
+  </div>
+</div>
+
+<div id="ID26" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Michael Smith</div>
+  
+
+  <div class="comment">
+  Thank you very much for posting the interviews with Mark Wiggins. In
+  particular, Christopher Hogwood's reference to the BBC's ambitious
+  recording schedule brought to mind a couple of ambitious projects with
+  the Academy in the early eighties: Telemann's Der Messias and Benda's
+  melodrama Medea. The latter featured an incandescent performance by
+  Barbara Jefford in the title role. O, to be able to hear it again!
+  </div>
+</div>
+
+<div id="ID27" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Jean-Claude Feret</div>
+  
+
+  <div class="comment">
+  Hi...<br>
+  I'm a professionnal chamber violinist, now in pension, but spent my life
+   performing music from middle-age till contemporary, and as much as
+  possible following the conventions of the time (for instance, I never
+  played Prokofieff on a barok fiddle !).<br>
+  <br>
+  I started investigating on Baroque since 1967 (reading many old texts), but on my own, since at the time I was in South Africa.<br>
+  <br>
+  Later (1977) I extended that research till Mozart, and, soon after (1980) till Beethoven and early 19th.<br>
+  As much for the instrumental tech as for the playing conventions...<br>
+  <br>
+  I must say that since your publication of the Mozart symphonies, I do
+  admire very much your production in that line, and am totally confident
+  in it, even before to listen to it.<br>
+  <br>
+  Therefore, I'd like to ask a question concerning a detail that I thought to be without any doubt or uncertainty: the trill.<br>
+  <br>
+  According to all texts I read, Quantz, Corette, L'abb&#195;&#169; le fils,
+  Geminiani, Tartini, Couperin, etc... It always has to start with the top
+   appogiature (to create an expressive dissonnance), the only tiny
+  exception I know on that , is KPE Bach, in what he calls "Prall
+  Triller", but only concerning very fast passages, where others would in
+  fact only do an appogiature.<br>
+  <br>
+  Of course, I mean that all this applies from the beginning of the 17th
+  century, and to exactly 1825... in the 16th, trills where not that much
+  in use, and anyway had a different meaning, and, as for that date 1825
+  that may seem a bit arbitrary, it is just according to Hummel, who said
+  in the preface of his piano method:<br>
+  "I know that the trills have to be always started with the top note, but
+   I think it should be started on the note itself..." and then he spend a
+   half page explaining why and how... and knowing that his method had a
+  very fast fame, in the next 5  years, everybody was following his advice
+   (but that did brobably not affect Beethoven nor Schubert who died in
+  the next 2 or 3 years after).<br>
+  <br>
+  Any way, my question is:<br>
+  more and more among  todays players (I mean the baroque so called
+  specialists, and not even speaking of fakes like Biondi or Melkus), one
+  hears trills played like romantic trills... even if the rest of the
+  recordings seems close to the proper style (correct ornements, correct
+  speeds, and so on)...<br>
+  <br>
+  the first instance of such a thing was by a German conductor Reinhart
+  Goebel, in a Bach overture, in the famous air, where the improvised
+  ornaments were OK, but all the trills were started "alla Romantica"...
+  even, there was there a text from Goebels to explain why he did so (but I
+   must confess that it did not really convinced me)... later, I had a
+  very well played recording of Scarlatti sonatas by Andrea Stair, where
+  he, some times, did the same... also a recording of Biber sonatas, but
+  the violinist was a pupil from Goebels, so...<br>
+  <br>
+  More recently, I came across Your recording of Mozart concerto for flute
+   &amp; harp, and the soloists are doing the same... so, I hope I finally
+   will have the answer to that question, and I'm prepaired to change my
+  mind (if the arguments seem valid enough though)...<br>
+  <br>
+  Thanks for reading all that, and I hope answering to it...<br>
+  <br>
+  If in parallel you like to visit my site, you are welcome, here is the address:<br>
+  <br>
+  http://www.jeanclaudeferet.net/<br>
+  <br>
+  Thanks anyways for providing such a space for contacts
+  </div>
+</div>
+
+<div id="ID28" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : joe</div>
+  
+
+  <div class="comment">
+  Mr. Hogwood:<br>
+  I have the first 10 volumes of your exceptional work of Haydn's complete
+   symphonies.  However, the set is NOT complete. And the set lacks the
+  best.  This is a Haydn's-best-symphonies-sized hole in your work.  Will
+  the Haydn set ever be complete?  Please make time for it.  Hoping you
+  do, and wishing the very BEST.<br>
+  <br>
+  Joe
+  </div>
+</div>
+
+<div id="ID29" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Michael Smith</div>
+  
+
+  <div class="comment">
+  Thank you for making the music on the opening page an 'optional extra'. I
+   think that music deserves to be listened to, rather than inflicted.
+  </div>
+</div>
+
+<div id="ID30" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Heinz Wallisch</div>
+  
+
+  <div class="comment">
+  Article about Christopher Hogwood on Radio KLARA, Dutch-language program
+   of the Belgian Radio, on Thursday, March 27 &#226;&#8364;&#8221; on one of my websites:<br>
+  <br>
+  'Tempel der Toonkunst' in the Netherlands.<br>
+  <br>
+  http://tempeldertoonkunst.blogspot.com/2008/03/christopher-hogwood-bereidt-het-martin.html<br>
+  <br>
+  If you keep me posted, I can write about the Martin&#197;&#175;-year on several
+  cultural websites in the Netherlands, Belgium, Germany and some
+  English-language international weblogs.<br>
+  <br>
+  Kind regards,<br>
+  <br>
+  Heinz Wallisch<br>
+  music and literary critic<br>
+  <br>
+  Jupiterstraat 11<br>
+  NL &#226;&#8364;&#8221; 9742 ES  Groningen<br>
+  The Netherlands<br>
+  </div>
+</div>
+
+<div id="ID31" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Guy Beddington</div>
+  
+
+  <div class="comment">
+  A v.rare claverin dated 1570 by Domenicus Pisanensis is coming up for
+  sale bu judicial order next week down here. U qaw Robin Boyle this AM<br>
+  and thought to contact you. If you were unaware<br>
+  or are interested in further details please let me know<br>
+  Yrs<br>
+  Guy B.
+  </div>
+</div>
+
+<div id="ID32" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Michael Smith</div>
+  
+
+  <div class="comment">
+  By the way, I'm truly very fond of Martinu's Double Violin Concerto.<br>
+  <br>
+  I'd really rather not hear the first half bar of it, however, whenever I come to check Christopher Hogwood's concert itinerary.<br>
+  <br>
+  Michael x
+  </div>
+</div>
+
+<div id="ID33" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Michael Smith</div>
+  
+
+  <div class="comment">
+  Thank you for restoring the Food Counter archive.<br>
+  <br>
+  Yours, salivating,<br>
+  <br>
+  Michael Smith
+  </div>
+</div>
+
+<div id="ID34" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Terry Holmes</div>
+  
+
+  <div class="comment">
+  Dear Mr Hogwood, <br>
+  <br>
+  Many thanks to you and Hyperion for making me very happy today. I have
+  waited twenty years for a CD recording of Martinu's lovely Double
+  Concerto for Violin &amp; Piano. It seems that Supraphon never saw fit
+  to re-issue their recording which I owned on LP. No matter now that you
+  have given us this splendid new recording which I hope will win the
+  composer many new friends.<br>
+  <br>
+  If you ever have some Czech singers at your disposal and the support of
+  an enterprising record label - please, please, please consider another
+  Martinu rarity, the enchanting Cantata 'Kytice ' (Bouquet).
+  </div>
+</div>
+
+<div id="ID35" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Bertram Heisl</div>
+  
+
+  <div class="comment">
+  Hello Mr Hogwood,<br>
+  <br>
+  as one of your German admirers please let me know your adress to get an
+  originally signed photo. Thank you very much in anticipation.<br>
+  <br>
+  Yours<br>
+  Bertram Heisl
+  </div>
+</div>
+
+<div id="ID36" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Mr. Mikael Hiort af Orn&#195;&#164;s</div>
+  
+
+  <div class="comment">
+  Dear Sir,<br>
+  <br>
+  I wonder if I may use any of the wonderful photographs of You, that are
+  available at Your webpage to illustrate the English Wikipedia Internet
+  page on You (http://en.wikipedia.org/wiki/Christopher_Hogwood)? The
+  photograph will of course be tagged with the name of the photographer,
+  and Your name.<br>
+  <br>
+  Yours Sincerely,<br>
+  <br>
+  Mikael Hiort af Orn&#195;&#164;s,<br>
+  Uppsala, Sweden
+  </div>
+</div>
+
+<div id="ID37" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Michael Smith</div>
+  
+
+  <div class="comment">
+  May I offer a warm welcome back to The Food Counter? I'd be even happier
+   to see the older Food Counter articles in the archive...please?<br>
+  <br>
+  Kind regards<br>
+  <br>
+  Michael Smith
+  </div>
+</div>
+
+<div id="ID38" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Victor St.Denis</div>
+  
+
+  <div class="comment">
+  Dear Mr.Hogwood, I am trying to obtain a DVD of a performance by youself
+  of Dido and Aenaes by Henry Purcell. This is for my grandson who needs
+  it for his studies. I believe it was produced by Ms Kirby. As expected by
+   a teenager he has given me little time to obtain the DVD. Hoping for a
+  speedy response,Yours Vic St.Denis
+  </div>
+</div>
+
+<div id="ID39" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : guillermo</div>
+  
+
+  <div class="comment">
+  estimado christopher, mi nombre es Guillermo Mart&#195;&#173;nez y resido en
+  Granada. Tengo entendido que Pablo Heras estudi&#195;&#179; direcci&#195;&#179;n orquestal con
+   usted en mi ciudad.<br>
+  <br>
+  Quisiera conocer si hace algun t&#195;&#173;po de masterclass donde pudiera asistir,
+  en granada o en Espa&#195;&#177;a.<br>
+  <br>
+  Reciba un cordial saludo<br>
+  Guillermo Mart&#195;&#173;nez
+  </div>
+</div>
+
+<div id="ID40" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Patricia Yeiser</div>
+  
+
+  <div class="comment">
+  Dear Mr. Hogwood: <br>
+  At the suggestion of your website (I loathe computereese) I read your
+  column in The Guardian (November 2003) about  arbitrary shifting of
+  intervals in opera.  It reminded me of a section in Dorothy L. Sayers's
+  "Murder Must Advertise":  Lord Peter Wimsey is explaining the niceties
+  of language  required  in the labeling of products, and describes the
+  distinctions among with, from and chiefly, necessary to avoid litigation
+   for libel.  Perhaps productions to which directors (and in the
+  USA,union scene-shifters) have taken, if not the hatchet, then the paper
+   cutter, should be advertised thus: "La Clemenza di Tito," with parts by
+   Mozart; "Orlando," from Handel; or " The Cunning Little Vixen," chiefly
+   by Janacek.  In any case, I enjoyed your column, which I assume is
+  predominantly by Hogwood.<br>
+  Yours sincerely, Patricia Yeiser, Syracuse, New York  U.S.A.<br>
+   Add.  Chorus on toilets?  How extremely tacky and more to the point, not Historically Informed.
+  </div>
+</div>
+
+<div id="ID41" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Barry OBrien</div>
+  
+
+  <div class="comment">
+  I am trying to locate a Christmas CD that I lost and I do not have much
+  information to go by.  I know the conductor was Christopher Hogwood, it
+  was recorded in a church in England with a chorus and consisted
+  primarily of Christmas songs.<br>
+  <br>
+  Would love to purchase somewhere if you can help.<br>
+  <br>
+  Thanks.
+  </div>
+</div>
+
+<div id="ID42" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Elle Sophocles</div>
+  
+
+  <div class="comment">
+  Dear Mr Hogwood, <br>
+  I would just like to congratulate you on your excellent contribution to
+  classical music. At the risk of sounding colloquial, keep up the good
+  work.<br>
+  </div>
+</div>
+
+<div id="ID43" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Ryan Burris</div>
+  
+
+  <div class="comment">
+  Hello Christopher Hogwood:<br>
+  When will you be in Los Angeles California?<br>
+  I would like to attend your performance.<br>
+  <br>
+  Ryan Burris
+  </div>
+</div>
+
+<div id="ID44" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Wei-chin Chen</div>
+  
+
+  <div class="comment">
+  Dear Mr. Hogwood: <br>
+  <br>
+  Congratulations on turning sixty-six! Sincerely I hope there could be
+  more fine records and punlications coming out from you. Here I wish you
+  good health and hope everything around you moves smoothly! <br>
+  <br>
+  Sincerely,<br>
+  <br>
+  Wei-chin Chen (Taipei, Taiwan)
+  </div>
+</div>
+
+<div id="ID45" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Florencia</div>
+  
+
+  <div class="comment">
+  Dear mr hogwood,  Im argentina and Im in high school and mi music
+  teacher told me you found the creation of Cristopher Hogwood but i can&#194;&#180;t
+   found it please help me to found it!
+  </div>
+</div>
+
+<div id="ID46" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Andrew Borisoff</div>
+  
+
+  <div class="comment">
+  Dear Mr. Christopher Hogwood! <br>
+  <br>
+  I`m your fan from Russia. I was in your concert in Madrid (february,
+  2007) and was happy to listen to your performance of Mendelsohn symphony.
+   I was impressed very much by your conducting. There is a intelligent
+  group in Perm State University (Russia) that supports your views on the
+  music and the way of performance. Sorry, the modern musical culture
+  lives in crisis, and we can hear the ancient music only by the
+  recordings. I know any time ago you visited Russia and played the
+  concert, and even now it`s discussed among the Russian musicians. Thank
+  you very much for your great work. I hope you`ll visit Russia more. My
+  intent is to write that the Russians love you. <br>
+  Sincerely yours, <br>
+  Andrew Borisoff
+  </div>
+</div>
+
+<div id="ID47" class="feedbackentry OKToPublish editable">
+  <div class="name">Name : Wei-chin Chen</div>
+  
+
+  <div class="comment">
+  Dear Mr. Hogwood, and the Hogwood-Community:<br>
+  <br>
+  I am quite excited to see such a new window here inviting anyone who see
+   this site, who have questions and are interested in the information to
+  have their spaces. <br>
+  <br>
+  Among several updated versions of the web-site, I think I like this one
+  the most. This is strikingly clear, and well managed. The colour themes
+  in the site is really tasteful. Here, as someone who had visited the
+  office and received kind help from the "community", could I suggest you
+  put on the portrait and have a part in the site for the people get to
+  know you? It would be nice to know more from the team, and surely better
+   for the people to know whom to contact while we need help.<br>
+  <br>
+  Sincerely,<br>
+  <br>
+  Wei-chin Chen (Taipei)
+
+  </div>
+</div>
+
+ <!-- rightcontent -->
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<!-- maincontent -->
+

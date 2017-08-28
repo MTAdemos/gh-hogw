@@ -1,0 +1,100 @@
+
+<script type=text/javascript src="jquery.fontavailable-1.1.min.js"></script>
+<script type=text/javascript src="spectrum.js"></script>
+<link href="http://fonts.googleapis.com/css?family=Scada" rel="stylesheet" type="text/css">
+
+
+<table cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td>
+<div style="height: 478px;" id="leftmenu" class="setupForPerfectScrollbar ps-container">
+  <div class="title">Font chooser</div>
+  <ul id=fontchooserlist>
+
+
+  </ul>
+</div>
+ <!-- "leftmenu"  -->
+
+
+
+</td><td>
+
+<style>
+#rightcontent{
+  font-size:12px;
+}
+
+#rightcontent p{
+  text-align: justify;
+}
+
+#FontChosen{
+  font-size:14px;
+}
+
+.colourhd{
+  border-top: 1px solid;
+  border-color:#555555;
+
+  margin:10px 0px 4px 0px;
+  padding: 10px 10px 10px 10px;
+
+}
+
+</style>
+
+<div id="rightcontent" class="setupForPerfectScrollbar ps-container">
+
+<div id=FontChosen></div>
+<p>
+This page is intended to allow some experimenting over fonts and colours.
+On the left is a list of fonts: clicking on one of them should cause the text here to change font.
+With web fonts, as with fonts for print, the font size specified doesn&#146;t correlate directly
+to the actual size of the characters, so I&#146;ve added some code to minimise the apparent diferences
+in font sizes so that comparison is easier.
+
+<p>
+Below are two colour-pickers &#151; one to allow the colour of the green background above to be
+changed
+and the other to change the colour of the lettering which is presently in yellow.
+The colour picker is in two parts: on the right is a rectangular stripe with a white
+slider on it: moving that up and down changes the basic colour.
+As you move that slider it changes the colour in the box on the left: which
+shows how the colour chosen (whch appears in the top right corner) can fade to white (top left)
+or black (bottom). When you click &#147;choose&#148; the colour chosen replaces
+the relevant part of what is at the top.
+</p>
+
+<p>
+The colours chosen are shown as numbers in the box above the &#147;choose&#148; button: to say
+which colours you like, could you record these numbers? It is also possible to type a number there
+to go back to a colour you have previously looked at (a background colour I am wondering about is
+a brown &#151; #65331f), which sends me to a site I did a while,
+<a href="http://www.didbach.co.uk"  target="new">www.didbach.co.uk</a>
+
+
+
+<table width=100%>
+<tr valign=top>
+<td width=50%>
+  <div class=colourhd>Choose colour for background at top</div>
+  <div id=flat1></div>
+<td width=30>&nbsp;
+<td width=50%>
+  <div class=colourhd>Choose colour for words on that background
+  (yellow&nbsp;by&nbsp;default)</div>
+  <div id=flat2></div>
+</table>
+
+
+
+</div>
+ <!-- rightcontent -->
+
+<div id=fontwtest style='display:inline; visibility: hidden;'>The quick brown fox jumped over the lazy dog.</div>
+
+
+</td></tr></tbody></table>
+
+

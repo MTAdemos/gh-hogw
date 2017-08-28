@@ -1,0 +1,61 @@
+#!/usr/bin/perl
+
+print "Content-type: text/html\n\n" ;
+print "";
+
+print "<html>";
+print "<head></head>";
+print "<body>";
+
+
+use strict;
+use warnings;
+
+my $buffer = "";
+if ($ENV{'REQUEST_METHOD'} eq "POST"){
+  read(STDIN, $buffer, $ENV{'CONTENT_LENGTH'});
+}
+else{
+ $buffer = $ENV{'QUERY_STRING'};
+}
+
+print "BUFFER: " . $buffer;
+
+my $var_archive_filename="";
+my $var_template="";
+
+# parse the data received
+
+foreach (split(/&/, $buffer)) {
+  my($key, $value) = split(/=/, $_);
+  #$key = decodeURL($key);
+  #$value = hextoascii(decodeURL($value));
+
+  #$value =~ s!\n\n\n!\n\n!g; # Convert 3 newlines into 2.
+  if($key eq "archivefilename"){$var_archive_filename=$value . ".htm";}
+  if($key eq "template"){$var_template="../data/tmp/" . $value;}
+}
+
+print "\n\narchivefilename "  . $var_archive_filename;
+print "\n\ntemplate "  . $var_template;
+
+open my $template_file, '<' . $var_template or die "failed to open $!";
+
+open my $archive_file, ">../data/" . $var_archive_filename or die  "failed to open $!";
+open my $archive_file_tmp, ">../data/tmp/" . $var_archive_filename or die  "failed to open $!";
+ 
+
+while (<$template_file>){
+  my $input_line=$_;
+  $input_line=~ s/InsertHere.htm/$var_archive_filename/g;
+  print $archive_file $input_line;
+  print $archive_file_tmp $input_line;
+}
+
+close(template_file);
+close(archive_file);
+close(archive_file_tmp);
+
+print "</body>";
+print "</html>";
+

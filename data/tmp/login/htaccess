@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "Please log in"
+AuthUserFile /home/margent/hogwood.org/pwd/.htpasswd
+require valid-user
+

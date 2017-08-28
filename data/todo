@@ -1,0 +1,60 @@
+check homepage photos, conesole says some are corrupt
+
+
+
+
+
+
+
+
+1) editable events up and down
+no need to pass ack an element type: if the previous element is of a different type it still makes 
+sense to be able to reverse them  
+
+
+**************************************
+
+*) Think about width on one column:   $("#maincontent").css("min-width","640px");  needed for youtube clips to fit
+
+
+
+
+******
+
+1 Why does dotted box round composer in calender go over the start of the title?
+2) check that delete really deletes the current dow in the calendar
+3) make sure piece is CanNotDelete
+
+*******
+Check if these are done (maybe? -- 2014-04-18)
+
+
+
+* look at section headings in new discog
+
+* add haydn & mozart symphonies
+
+
+1) Automatically detect if there are no composers beginning withgiven letter and put message to that
+effect.
+To do this:
+
+a) select addClass("ShowEntry") to seleted items
+b) hide all others
+c) print error message if $(".ShowEntry").length<1
+
+
+
+
+2) Haydn and Mozart symphonies (Show to right of table)
+
+
+
+
+***********
+
+
+
+insert empty compsoer fields and stat of recording fields
+check composer references
+turn <i> </i> in performers into <span class=inst> </span>

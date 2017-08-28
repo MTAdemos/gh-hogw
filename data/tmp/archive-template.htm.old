@@ -1,0 +1,23 @@
+<!--#include file="head.htm"-->
+
+<body>
+<div id=outer>
+
+<!--#include file="topbanner.htm"-->
+
+</div> <!--menu -->
+
+<div id=maincontent>
+<!--#include file="c-InsertHere.htm"-->
+<!-- maincontent -->
+</div>
+
+<!-- outer -->
+</div>
+
+</body>
+
+<!--#include file="cleanup.htm"-->
+
+</html>
+

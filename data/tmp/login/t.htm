@@ -1,0 +1,26 @@
+<html>
+<head>
+<script type=text/javascript src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+<script>
+jQuery.fn.extend({
+  ftn: function(){
+    alert("hello world");
+    alert($(this).html());
+  }
+});     
+</script>
+</head>
+
+<body>
+
+<div id="maincontent">
+main content
+</div>
+
+<script>
+$("#maincontent").ftn();
+</script>
+
+</body>
+</html>

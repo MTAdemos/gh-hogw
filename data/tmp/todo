@@ -1,0 +1,14 @@
+Ensure there is a </div> to end maincontent in archive content 
+
+
+add <br clear=both> to range of things that canbe added in editing
+
+swap apostrophes/inverted commas /endash/emdash to HTML entities after pasting
+
+
+suppress Mdiv class=leader> if empty
+
+
+
+
+1) check to see if there is an accumulation of <br clear=both class=clearbeforeclicktoedit> -- probably needs explicit removal in end_edit() or save()

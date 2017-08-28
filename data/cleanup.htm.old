@@ -1,0 +1,460 @@
+<script>
+
+// things for editing
+
+if(readCookie("loggedin")>0){
+
+//  if(location.toString().indexOf("/tmp")>-1){ // only proceed if we are in tmp directory
+//    $.getScript("login/templates.js?" + Math.random());
+//    $.getScript("login/editable.js?" + Math.random(),function(){
+//      //loop through all editable events
+//      $(".editable").each(function(){
+//        $(this).enable_editing();
+//      });
+//      $("#maincontent").AddNewTemplateLinkIfNeeded();
+//    })
+//    .fail(function(jqxhr,settings,exception){alert("FAIL: jqxhr " + jqxhr + " settings " + settings + " exception " + exception);})
+//  }  // end if (in tmp)
+
+  if(location.toString().indexOf("/tmp")>-1){ // only proceed if we are in tmp directory
+    $.getScript("login/templates.js?" + Math.random(),function(){
+      $.getScript("login/editable.js?" + Math.random(),function(){
+        //loop through all editable events
+        $(".editable").each(function(){
+          $(this).enable_editing();
+        });
+        $("#maincontent").AddNewTemplateLinkIfNeeded();
+      })
+      .fail(function(jqxhr,settings,exception){alert("FAIL: jqxhr " + jqxhr + " settings " + settings + " exception " + exception);})
+    });
+  }  // end if (in tmp)
+
+} // end if(loggedin)
+
+</script>
+
+
+
+<script>
+
+// if there is an argument it is taken to be the max width of the column
+
+// dummy stuff to allow experimenting on page width
+
+
+function OneColumnSetup(){
+
+  var sp=$(window).height()-$("#pagewrapper").height();
+  var pagewrapper_spa=Math.round(sp*0.4);
+  if(pagewrapper_spa>100)pagewrapper_spa=100;
+  if(pagewrapper_spa<0)pagewrapper_spa=0;
+
+// not sure about this, and so have commented out the following line which
+// adds extra space above short pages
+
+//  $("#pagewrapper").css("margin-top",pagewrapper_spa + "px");
+
+  var mc_height=$(window).height()-$("#topbanner").height()-90;
+
+  $("#maincontent").css("height",mc_height + "px");
+  $("#maincontent").perfectScrollbar({minScrollbarLength:40,includePadding:true});
+
+  if(arguments.length>0){
+    $("#maincontent").css("max-width",arguments[0]);
+    $("#maincontent").css("margin","0px auto 0px auto");
+  }
+}
+
+
+
+function TwoColumnSetup(){
+  $("#leftmenu").perfectScrollbar({minScrollbarLength:40});
+  $("#rightcontent").perfectScrollbar({minScrollbarLength:40});
+  var h=$(window).height()-$("#topbanner").height();
+
+  h=h-100;
+  $("#leftmenu").css("height",h + "px");
+  $("#rightcontent").css("height",h + "px");
+}
+
+
+$(document).ready(function(){
+
+  if($("#homepage").length>0){  // front page
+
+    var im1=new Array(pre + "Fortepiano-ed" + post, pre + "Photo1-ed" + post, pre + "Photo7-ed" + post, pre + "virginals-ed" + post);
+    var im2=new Array(pre + "Photo2-ed" + post, pre + "Photo3-ed" + post, pre + "Photo5-ed" + post, pre + "Portrait-ed" + post)
+    var im3=new Array(pre + "Photo4-ed" + post, pre + "Photo6-ed" + post, pre + "Photo8-ed" + post, pre + "Photo9-ed" + post)
+
+    var images=new Array("im1","im2","im3");
+    var images_ind=0;
+    var i=0;
+    var j=1;
+    var im1_ind=0;
+    var im2_ind=0;
+    var im3_ind=0;
+    var interv;
+
+
+    function fade(){
+      i++;
+      if(i==images.length){i=0; j=(j+1)%im1.length;}
+
+      $("#"+images[i]).fadeOut(200,function(){
+        $("#"+images[i]).html(eval(images[i])[j]);
+        $("#"+images[i]).fadeIn(800,function(){setTimeout(fade,1000);});
+      });
+    };
+
+    fade();
+
+    var sp=$(window).height()-$("#homepage").height();
+    var homepage_spa=Math.round(sp*0.4);
+    if(homepage_spa>100)homepage_spa=100;
+    if(homepage_spa<0)homepage_spa=0;
+    $("#homepage").css("margin-top",homepage_spa + "px");
+
+  } // if front page
+
+  // news page
+  if(location.toString().indexOf("news.htm")>-1){
+    $("#ArchiveMenuInNews").hide();
+    OneColumnSetup("90ex");
+  }
+
+  // calendar page
+  if(location.toString().indexOf("calendar.htm")>-1){
+    OneColumnSetup("90ex");
+  }
+
+  // calendar archive page
+  if(location.toString().indexOf("cal-")>-1){
+    TwoColumnSetup();
+    $("#maincontent").before("<div id=calendararchivemenu>Past engagements from:</div>");
+    $("#calendarpast .m2").each(function(){
+      $("#calendararchivemenu").append("<div class=m2calendararchive>" + $(this).html() + "</div>\n");
+    });
+    $("#calendararchivemenu .m2calendararchive").each(function(){
+      if(location.toString().indexOf($(this).text())>-1){
+        $(this).html($(this).text());       // stop the current entry being a link to itself
+        $(this).addClass("highlighted");
+      }
+    });
+  }
+
+
+  // menus
+  var uw=0;
+  $("#menu .mitem").each(function(){uw+=$(this).width();});
+  var pr=Math.round(uw/$("#menu .mitem").length);
+
+  // add top link
+  if($("#totop")){$("#totop").remove();}
+  $("<div id='totop'><a name='top'></a></div>").insertBefore("#outer");
+
+
+
+  // publications pages
+  if(location.pathname.indexOf("publications")>-1){
+    var mc_w=$("#maincontent").width()-10;
+    $("#maincontent").css("width",mc_w + "px");
+
+    OneColumnSetup();
+
+
+    var textwrapper_width=parseInt($("#rightcontent").width())-160;
+    $(".textwrapper").css("width",textwrapper_width + "px");
+
+    $(".moretext").hide();
+    $(".more").on("click",function(){
+    console.log("more");
+      $(this).parents(".publication").find(".moretext").show();
+      $(this).parents(".publication").find(".more").hide();
+      $(this).parents(".publication").find(".hide").show();
+    });
+    $(".hide").on("click",function(){
+    console.log("hide");
+      $(this).parents(".publication").find(".moretext").hide();
+      $(this).parents(".publication").find(".more").show();
+      $(this).parents(".publication").find(".hide").hide();
+    });
+  }
+
+
+  // biog pages
+  if(location.toString().indexOf("biography")>-1){
+    OneColumnSetup("90ex");
+  }
+
+  // biog pages
+  if(location.toString().indexOf("photograph")>-1){
+    OneColumnSetup();
+  }
+
+
+  // feedback
+  if(location.pathname.indexOf("feedback")>-1){
+    TwoColumnSetup();
+    $("#newfeedback").each(function(){
+      $("#rightcontent").prepend("\n" + $(this).html() + "\n");
+      $(this).remove();
+    });
+
+    $(".feedbackentry .email").remove();
+
+    //empty feedback file
+    $.ajax({
+        url: "/cgi-bin/touch.cgi",
+        cache: false,
+        data: "filename=tmp/new_feedback.htm"
+      })
+      .error(function(xqXHR,textStatus,errorThrown){
+        alert("Error, status: " + textStatus + " error: " + errorThrown +"\n");
+      })
+     // .success(function(returned){alert("Success, returned: " + returned);});
+
+  }
+
+  // archive page
+  if(location.toString().indexOf("archive")>-1){
+    OneColumnSetup("90ex");
+  }
+
+// instruments pages
+
+  if(location.toString().indexOf("instruments")>-1){
+    $(".instrumenttable").css("padding-top","0px");
+    var spare=$(window).height()-$("#pagewrapper").height();
+    var vsp=Math.round(spare*0.4);
+    if(vsp<0)vsp=0;
+    if(vsp>90)vsp=90;
+    $(".instrumenttable").css("padding-top",vsp+"px");
+  }
+
+  if(location.toString().indexOf("inst")>-1){
+    var mc_w=$("#maincontent").width()-10;
+    $("#maincontent").css("width",mc_w + "px");
+    OneColumnSetup();
+
+    var Boalch2str="<i>Boalch2</i>: Donald H. Boalch, <i>Makers of the Harpsichord and Clavichord, 1440&#150;1840</i>, 2nd edition (Oxford, 1974)"
+    var Boalch3str="<i>Boalch3</i>: Donald H. Boalch, <i>Makers of the Harpsichord and Clavichord, 1440&#150;1840</i>, 3rd edition, edited by Charles Mould (Oxford, 1995)"
+    var Clinkscalestr="<i>Clinkscale</i>: Martha Novak Clinkscale, <i>Makers of the Piano, 1700&#150;1820</i> (Oxford, 1993)"
+
+    $(".instrumenttable").on("click",function(event){
+      event.stopPropagation();
+      $('.instrefinfo').remove();
+    });
+
+    $(".instref").on("click",function(event){
+      event.stopPropagation();
+      $('.instrefinfo').remove();
+      var str;
+      if($(this).html().indexOf("Boalch2")>-1){str=Boalch2str;}
+      if($(this).html().indexOf("Boalch3")>-1){str=Boalch3str;}
+      if($(this).html().indexOf("Clinkscale")>-1){str=Clinkscalestr;}
+      $(this).parent().append("<div class='instrefinfo'>" + str + "</div>");
+    });
+
+
+  }
+
+
+  // discography
+  if(location.toString().indexOf("recordings")>-1){
+
+    var mc_w=$("#maincontent").width()-10;
+    $("#maincontent").css("width",mc_w + "px");
+    OneColumnSetup();
+
+// hide empty composer and title fields
+    $(".composer").each(function(){
+      if($(this).text().length<1){$(this).remove();}
+    });
+    $(".title").each(function(){
+      if($(this).text().length<1){$(this).remove();}
+    });
+
+
+    // hide the loading text and show the search text
+    $("#discogwaitingtext").remove();
+    $("#discogsearchtext").removeClass("discogHide").addClass("discogShow");
+
+    // now search if the discog cookie was set
+    var discogcookie= readCookie('discog');
+    if(discogcookie){
+//alert("cookie read: " + discogcookie);
+      discogselect(discogcookie,"all");
+      createCookie('discog','',-1);
+    }
+
+//    $(".rechdcol3").css("padding-left","110px");
+//    var spare_rechd_space=$("#rechd").parent().width()-$("#rechd").width()+110-10;
+//    $(".rechdcol3").css("padding-left",spare_rechd_space + "px");
+//
+
+    // force "info" elements to be padded to width of tag + date + format
+
+    var left_padding_for_info=$(".discogitem .tag").width() + $(".discogitem .date").width() + $(".discogitem .format").width();
+    $(".discogitem .info").css("padding-left",left_padding_for_info + "px");
+
+    $(".discogsymph").hide();
+    $(".discogitem").on("click",function(){
+      if($(this).find(".discogsymph").length<1){
+        $(".symphonydetail").remove();
+      }
+    });
+
+//.discogsymph
+    $(".symhaydn").on("click",function(){
+      var volumenum=$(this).text();
+      var volumeid="symh" + volumenum;
+      $(".symphonydetail").remove();
+      $(this).append("<div class='symphonydetail discogitem discogsymph'>" + $("#" + volumeid).html() + "</div>");
+      var sd_w=$(".discogsymphonieswrapper").width()-$(".discogsymphoniestable").width()-parseInt($(".symphonydetail").css("left"))+30;
+      $(".symphonydetail").css("width",sd_w + "px");
+    });
+
+    $(".symmozart").on("click",function(){
+      var volumenum=$(this).text();
+      var volumeid="symm" + volumenum;
+      $(".symphonydetail").remove();
+      $(this).append("<div class='symphonydetail discogitem discogsymph'>" + $("#" + volumeid).html() + "</div>");
+      var sd_w=$(".discogsymphonieswrapper").width()-$(".discogsymphoniestable").width()-parseInt($(".symphonydetail").css("left"))+30;
+      $(".symphonydegtail").css("width",sd_w + "px");     
+    });
+
+  }
+
+
+// bgcolor was '#5f0a0a' for pink
+
+
+  $(".yoxview").yoxview({
+    backgroundOpacity:0.5,
+    backgroundColor: '#e9f2f2',
+    cacheBuffer:0,
+    cacheImagesInBackground:true
+   });
+
+  $(".blat").each(function(){$(this).blat();});
+
+
+
+
+// adjust menu
+
+$(".m0").hover(function(){
+  $(this).find(".m1wrap").css("left","0px");
+  $(this).find(".m1wrap").css("left",$(this).width() +8 + "px");   // increased from 6
+});
+$(".m1wrap").hover(function(){
+  $(this).find(".m2wrap").css("left","0px");
+  $(this).find(".m2wrap").css("left",$(this).width() -1 + "px");
+//console.log("m1wrap hover, m2wrap width: " + $(this).find(".m2wrap").width() + " pagewrapper width: " + $("#pagewrapper").width() + " " + $("#pagewrapper").parent().width());
+});
+
+$(".m2wrap").hover(function(){
+  $(this).find(".m3wrap").css("left","0px");
+  $(this).find(".m3wrap").css("left",$(this).width() -1 + "px");
+//console.log("m2wrap hover, m3wrap width: " + $(this).find(".m3wrap").width() + " pagewrapper width: " + $("#pagewrapper").width() + " " + $("#pagewrapper").parent().width());
+});
+
+
+$(".m0").each(function(){
+  if(location.toString().toLowerCase().indexOf("/" + $(this).find("a").eq(0).html().toLowerCase())>-1){
+    $(this).addClass("highlighted");
+  }
+  if((location.toString().toLowerCase().indexOf("inst")>-1) && ($(this).html().indexOf("Collections")>-1)){
+    $(this).addClass("highlighted");
+  }
+});
+
+
+function adjust_page_margins_to_center(){
+  var lmarg=Math.round(($(window).width()-$("#pagewrapper").width())/2);
+  $("#pagewrapper").css("margin-left",lmarg + "px");
+}
+
+adjust_page_margins_to_center();
+$(window).on("resize",adjust_page_margins_to_center);
+
+//var lmarg=Math.round(($(window).width()-$("#pagewrapper").width())/2);
+//alert(lmarg + " CHECK using xx.htm and alter to execute this when the page is resized");
+//$("#pagewrapper").css("margin-left",lmarg + "px");
+
+
+
+// temporary for colourfont
+
+if(location.toString().indexOf("colourfont")>-1){
+
+  var fontarray=new Array(
+  "Optima",
+  "Verdana",
+  "Gill Sans",
+  "Scada",
+  "Arial",
+  "Helvetica",
+  "Palatino",
+  "Garamond");
+
+  for(var i=0;i<fontarray.length;i++){
+    if($.fontAvailable(fontarray[i])){
+      var id="ID" + i;
+      $("#fontchooserlist").append("<li class=fchooser id=" + id + ">" + fontarray[i] + "</li>\n");
+      $("#" + id).css("font-family",fontarray[i]);
+      $("#fontwtest").css("font-family",fontarray[i]);
+      if(i==0){
+        var defaultwidth=$("#fontwtest").width();
+        }
+      else{
+        var fsize=parseInt($("#fontwtest").css("font-size"));
+        var newfsize=fsize*defaultwidth/$("#fontwtest").width();
+        $("#rightcontent").css("font-size",newfsize + "px");
+        $("#" + id).css("font-size",newfsize + "px");
+      }
+    }
+  }
+
+
+  $(".fchooser").on("click",function(){
+    $("#rightcontent").css("font-family",$(this).html());
+    $("#FontChosen").html("<h2><span style='font-weight:normal;'>Current font:</span> " + $("#rightcontent").css("font-family") + "</h2>");
+    $("#fontwtest").css("font-family",$(this).html());
+
+    var fsize=parseInt($("#fontwtest").css("font-size"));
+    var newfsize=fsize*defaultwidth/$("#fontwtest").width();
+    $("#rightcontent").css("font-size",newfsize + "px");
+
+  });
+
+  $("#flat1").spectrum({
+  color: "#655e1f",
+  flat: true,
+  showInput: true,
+  showPalette: true,
+  change: function(color){
+    $("#topbanner").css("background-color",color.toHexString());
+  }
+});
+
+
+$("#flat2").spectrum({
+  color: "#eecd11",
+  flat: true,
+  showInput: true,
+  showPalette: true,
+  change: function(color){
+    $("#topbanner").css("color",color.toHexString());
+  }
+});
+
+
+}
+
+}); // end of document ready function
+
+</script>
+
+
+

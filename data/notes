@@ -1,0 +1,28 @@
+Feedback                
+=======
+There is now an "OKToPublish" box under each feedback entry. These all 
+appear in the /tmp version, but only the ones with "OJToPublish" ticked 
+appear in the live site.
+
+
+Controls
+=======
+I've removed the control box and set the hover colour to the dark red and 
+the column width to 90ex
+
+
+Links on instrument pages (e.g. Boalch)
+=======================================
+These now get an underline when you hover the mouse over them (as other links 
+do)
+
+Geminiani
+========
+Many apologies for the mistakes in converting this -- it should be fine now
+
+
+Discography
+===========
+It looks as if 51 new items have been added
+
+Searching: "K136", "K.136" "K 136" and "K. 136" search differently

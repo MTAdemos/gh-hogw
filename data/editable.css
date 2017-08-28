@@ -1,0 +1,150 @@
+/* ********************************************************************* */
+/* ********************************************************************* */
+/*   for editable things                                                 */
+/* ********************************************************************* */
+/* ********************************************************************* */
+
+.beingedited{
+  border:1px dotted;
+  border-color:#555555;
+  background-color:#dddddd;
+}
+
+.specialcharacters{
+  margin:5px 0px 0px 0px;
+}
+
+.specialcharacters .label{
+  font-family: "gill sans", "gill sans MT", "helvetica", "arial", sansserif;
+  display: inline;
+}
+
+.specialcharacters .character{
+  font-size:130%;
+  font-family: "Palatino","Palatino linotype","Book antiqua", "serif";
+  margin:0px 4px 0px 0px;
+}
+
+
+.editable{
+}
+
+.beingedited{margin: 10px; padding:10px; border:1px solid; border-color:green;}
+.beingedited .CanNotDelete{padding-right:10px;}
+
+.editflags{}
+
+.editflags:before{
+  content:".";
+  font-size:1px;
+  height: 0px;
+  display: block;
+  visibility: hidden;
+  clear:both;
+}
+
+.clicktoeditwrapper:before{
+  content:".";
+  font-size:1px;
+  height: 0px;
+  display: block;
+  visibility : hidden;
+  clear:both;
+}
+
+
+.clicktoedit{
+  padding:8px;
+  margin: 6px;
+  white-space:nowrap;
+  background-color:#f7c6c6; /*#dddddd;  */
+  border:2px solid; border-color:red;
+}
+
+.clicktoedit .inner0, .clicktoedit .inner1,.inner0wrap{
+  display: inline;
+}
+
+
+
+.clicktoedit .inner0:hover, .clicktoedit .inner1:hover{
+  color:red;
+}
+
+.clicktoendedit{
+  background-color:pink;
+  padding:4px;
+}
+
+
+
+.buttons{
+  margin: 0px 0px 0px 10px;
+}
+
+
+.imageuploadformwrapper{
+  padding:4px;
+  margin:0px 4px 0px 4px;
+  border:1px solid;
+  background-color:#ffdddd;
+}
+
+
+
+.imgbordertoggle{
+  font-family: "gill sans", "gill sans MT", "helvetica", "arial", sansserif;
+  font-size:80%;
+  border:1px solid;
+  border-color:black;
+  background-color:pink;
+  padding:4px;
+}
+
+
+.discogitem .beingedited .info,.discogitem .beingedited .note,.discogitem .beingedited .tag{
+  border: 1px dashed;
+}
+
+.discogitem .beingedited .info:before{
+  content: "information: ";
+}
+
+.discogitem .beingedited .note:before{
+  content: "note: ";
+}
+
+.composerselect{
+  padding:4px;
+  margin:2px 2px 10px 2px;
+  background-color:#ffff99;
+  border:1px solid;
+  border-color:blue;
+}
+
+
+.pwrapsecondary, .reissuesecondary, .notewrapsecondary, .reviewsecondary{
+  white-space:nowrap;
+  color: blue;
+  font-family: "Gill sans", "Gill Sans MT", Verdana, Arial, Helvetica, sans-serif;
+  font-size:85%;
+}
+
+.deleteimage{
+  white-space:nowrap;
+  color: blue;
+  font-family: "Gill sans", "Gill Sans MT", Verdana, Arial, Helvetica, sans-serif;
+}
+
+.pwrapsecondary .inner, .reissuesecondary .inner, .notewrapsecondary .inner, .reviewsecondary .inner{display:inline;}
+
+
+
+.OKToPublishbox{
+  padding:8px;
+  margin: 6px;
+  border:2px solid;
+  border-color:#a209a0;
+  background-color:#fbb4fa; /*#f794f7; */
+  text-align:right;
+}

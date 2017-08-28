@@ -1,0 +1,27 @@
+edit:
+
+add to pwrap a div offering new and delete buttons to add/remove rows
+
+ <div class=pwrap><div class="name CanNotDelete">David Munrow</div><div class="instrument 
+CanNotDelete">Director</div></div>
+
+
+same for reissued
+
+
+  <div class=reissued>
+    <div class=tag>Re-issued</div> <div class=date>2004</div>
+    <div class=format>CD</div>
+    <div class=number>Testament 1251</div>
+  </div>
+
+
+var pwrapstr="<div class=pwrap><div class='name CanNotDelete'>name </div><div class='instrument CanNotDelete'>instrument</div></div>";  
+
+var reissuedstr="";
+pwrapstr="  <div class=reissued>\n";
+pwrapstr="    <div class=tag>Re-issued</div> <div class=date>2004</div>\n";
+pwrapstr="    <div class=format>CD</div>\n";
+pwrapstr="    <div class=number>Testament 1251</div>\n";
+pwrapstr="  </div>\n";
+pwrapstr="  <p class='info CanNotDelete>info</div>\n";

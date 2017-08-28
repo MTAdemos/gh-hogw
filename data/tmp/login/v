@@ -1,0 +1,21 @@
+124a125
+> 
+143c144
+<     imgadded.css("height","auto");   // added as these were being set to 30x300
+---
+>     imgadded.css("height","auto");   // added as these were bein set to 30x300
+154a156
+> 
+196,198c198,203
+<          //   imguploaded.attr("width",imguploaded.width());
+<          //   imguploaded.attr("height",imguploaded.height());
+<          //   imguploaded.parent().css("width",imguploaded.width() + "px");
+---
+>          // setTimeout(function(){
+>             imguploaded.attr("width",imguploaded.width());
+>             imguploaded.attr("height",imguploaded.height());
+>             imguploaded.parent().css("width",imguploaded.width() + "px");
+>          //   },1000
+>          // );
+201d205
+< 

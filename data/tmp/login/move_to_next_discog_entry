@@ -1,0 +1,13 @@
+<script>
+alert("facility to click to next recording added");
+var ival=0;
+var id="id";
+$(".discogitem").each(function(){
+  id="id" + ival++;
+  var idnext= "id" + ival;
+  $(this).attr("id",id);
+  $(this).on("click",function(){
+    location.hash=idnext;
+  });
+});
+</script>

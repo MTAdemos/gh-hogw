@@ -1,0 +1,113 @@
+0) add caption option to contenteditale (to add class=caption)
+
+*) Think about width on one column:   $("#maincontent").css("min-width","640px");  needed for youtube clips to fit  
+*) add possible border to images (img class=imgdarkborder) -- need way to switch this on or off
+*) enable special characters: single and double quotes, endash and emdash (highlight and click to replace)
+
+") add way of putting indent left and right (p 
+
+q) check that editable div is properly clsoed by putting temporary border on it
+1) check style chnages might be needed when news stories moved to arhive
+
+*) add <p class=quote> option
+3) alter file name swhen thigs moved to archive to include "archive" and shorten the title to first
+two words
+
+add facility to have  image not floated (e.g. Cornell) -- better as facility to
+add <br clear=both>
+
+******
+
+1 Why does dotted box round composer in calender go over the start of the title?
+2) check that delete really deletes the current dow in the calendar
+3) make sure piece is CanNotDelete
+
+*******
+Check if these are done (maybe? -- 2014-04-18)
+
+
+
+* look at section headings in new discog
+
+* add haydn & mozart symphonies
+
+
+1) Automatically detect if there are no composers beginning withgiven letter and put message to that
+effect.
+To do this:
+
+a) select addClass("ShowEntry") to seleted items
+b) hide all others
+c) print error message if $(".ShowEntry").length<1
+
+
+
+
+2) Haydn and Mozart symphonies (Show to right of table)
+
+
+
+
+***********
+
+Check:
+text-align=justify gets lots when perfect scrollbar addded
+
+does perfect scrollbar class need to be removed before saving?
+
+
+
+
+*****
+1) Clicking on menu item:
+
+   a) get title
+
+   b) create filename
+
+   c) add to menu
+
+   d) save
+
+
+3) archive entries of form 131101BachDid.htm, content in c-131101BachDid.htm;
+
+5) cgi open
+   archive-template
+   change ssi value (c-131101BachDid.htm)
+   save to new filename (31101BachDid.htm) and in ../
+
+7) delete from news
+
+
+
+
+
+
+
+
+
+
+
+
+*********************************************
+I think these are all done (2014-04-18)
+
+
+add <div class=format> and <div class=number> (missing for some entries)
+
+
+
+
+******
+
+to here, adding <div class=repertoire> before repertoire, searching on <hr>, MB some composers etc not being
+re-stated, so need to add and hide this
+
+****
+
+
+
+insert empty compsoer fields and stat of recording fields
+check composer references
+turn <i> </i> in performers into <span class=inst> </span>

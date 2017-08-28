@@ -1,0 +1,51 @@
+<!--#include file="head.htm"-->
+
+
+<body>
+<div id=homepage>
+
+<!--#include file="topbanner.htm"-->
+
+<table class=home>
+
+<tr valign=middle>
+<td width=33% style="text-align:left;"> <div id=im1></div>
+<td width=33%><div style="text-align:center; margin:0px auto 0px auto; padding:0px 10px 0px 10px;"> <div id=im2></div>
+<td width=33%><div style="text-align:right; margin:0px 0px 0px auto;"> <div id=im3></div>
+</table>
+
+<script>
+
+var pre="<img src='HomePhotos/";
+var post="-w200.jpg' width=200 height=250>"
+
+//var post="-w300.jpg' width=300 height=375>";
+//if($(window).height()<740){post="-w250.jpg' width=250 height=313>";}
+//if($(window).height()<670){post="-w200.jpg' width=200 height=250>";}
+
+$("#im1").html(pre + "Photo1-ed" + post);
+$("#im2").html(pre + "Photo5-ed" + post);
+$("#im3").html(pre + "Photo6-ed" + post);
+
+</script>
+
+
+<div class=news>
+<span class=hd>Latest news: </span> Christopher is currently re-designing his web site.
+</div>
+
+
+
+<!--#include file="menu.htm"-->
+
+
+</div> <!-- homepage -->
+
+  
+
+</body>
+
+<!--#include file="cleanup.htm"-->
+
+</html>
+

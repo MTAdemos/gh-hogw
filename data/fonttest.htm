@@ -1,0 +1,75 @@
+<html>
+<head>
+
+<link href='http://fonts.googleapis.com/css?family=Marcellus|Eagle+Lake|Tenor+Sans' rel='stylesheet' type='text/css'> 
+
+<style>
+h1{
+  font-family: 'Marcellus', verdana, serif;
+  font-size:16px;
+}
+
+h2{font-weight: bold; color:#999999; font-size:14px; margin:0px; padding:10px 0px 0px 0px;}
+
+
+.eagle{
+  font-family: 'Eagle Lake', verdana, cursive;
+}
+
+.tenor{
+  font-family: 'Tenor Sans', times, sans-serif;
+}
+
+p{margin:0px 0px 10px 0px; padding:0px;}
+
+body{
+  max-width:70ex;
+  text-align: justify;
+  margin:0px auto;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Example of downloading fonts from Google: this heading is in Marcellus</h1>
+
+<h2 class=eagle>This is in Eagle font</h2>
+<p class=eagle>
+This page is intended to illustrated the one problem with downloading fonts 
+from Google, which is that there is a brief delay before the font downloads, so 
+a page may appear in another font first and then re-display in the downloaded 
+font. 
+How far this is a problem depends on connection speeds: I sometimes 
+notice this on my slow broadband connection in Wales, but it is usually less of 
+a problem in Cambridge.
+</div>
+
+<h2 class=tenor>This is in tenor font</h2>
+<p class=tenor>
+The way style definitions work you supply a list of fonts in the style 
+definition, and the browser uses the first one on the list that it can find. If 
+the instruction to download from Google is there, then it displays using the 
+first font on the list that it can find, but also starts downloading.
+If it happens that the font I've specified as a google font is already on your 
+machine, then it would display without downloading. For the purposes of this 
+test, I have used three fonts which you are unlikely to have but there is a 
+good range to explore at:
+
+<A href="http://www.google.com/fonts" 
+target="new">www.google.com/fonts</a>
+
+</p>
+
+<p class=tenor>
+If you don't like the sense of a page re-displaying, another way to use Google 
+fonts is as a fallback. Usually for a web site it makes sense to specify fonts 
+that are common, so they are very likely to be on people's computers. Google 
+fonts makes it possible to specify a font that is reasonably likely to be on 
+most people's machines,  with a credible alternative from Google to download if 
+the desired font is not available.
+
+</p>
+</body>
+</html>
+

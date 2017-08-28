@@ -1,0 +1,45 @@
+
+
+<div class="newsitem">
+<div class="title">
+Calendar
+</div>
+<div id="ID0" class="editable CanNotDelete">
+<p>
+Information about forthcoming events will be posted here soon.
+
+</p><p>
+We are in the process of adding information on past engagements. Those currently added are for:
+</p></div>
+
+<ul id="pastinfo">
+
+
+
+
+
+
+
+
+
+<li><a href="cal-2014.htm">2014</a></li>
+<li><a href="cal-2013.htm">2013</a></li>
+<li><a href="cal-2012.htm">2012</a></li>
+<li><a href="cal-2011.htm">2011</a></li>
+<li><a href="cal-2010.htm">2010</a></li>
+<li><a href="cal-2009.htm">2009</a></li>
+<li><a href="cal-2008.htm">2008</a></li>
+<li><a href="cal-2007.htm">2007</a></li>
+</ul>
+
+<script>
+
+$("#pastinfo li").remove();
+$("#calendarpast .m2").each(function(){
+  $("#pastinfo").append("<li>" + $(this).html() + "</li>\n");
+});
+</script>
+
+</div> <!-- maincontent -->
+
+

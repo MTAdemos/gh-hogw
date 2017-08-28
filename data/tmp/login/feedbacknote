@@ -1,0 +1,9 @@
+Feedbackcj
+add OKToPublish class to all add feedback entries
+in /tmp
+  add checkbox to display current value and add/remove this
+
+in save
+  save all in /tmp
+  remove all entries without OkToPublish and then save in ..
+
